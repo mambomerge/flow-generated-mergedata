@@ -1,0 +1,7 @@
+<design:component >
+  <design:attribute name="templateId" label="Template Id" />
+  <design:attribute name="recordId" label="Record Id" />
+  <design:attribute name="debugOn" label="Debug" />
+  <design:attribute name="record" label="Record" />
+  <design:attribute name="flowTextInput" label="Flow Text Input" />
+</design:component>

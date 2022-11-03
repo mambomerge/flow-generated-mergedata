@@ -1,0 +1,24 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+  <!-- These attributes are populated by Flow -->
+  <aura:attribute name="templateId" type="string" access="global" />
+  <aura:attribute name="debugOn" type="Boolean" access="global" default="true" />
+  <aura:attribute name="recordId" type="string" access="global" />
+  <aura:attribute name="record" type="Account" access="global" />
+  <aura:attribute name="flowTextInput" type="string" access="global" default="" />
+
+  <!-- These attributes are populated by this Aura Component -->
+  <aura:attribute name="showMambo" type="Boolean" default="false"/>
+  <aura:attribute name="mergeData" type="Object" />
+
+  <!-- This handler runs on load to combine the Flow attributes into the mergeData -->
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+  <aura:if isTrue="{!v.showMambo}" >
+    <mambo:mamboMerge templateId="{!v.templateId}" 
+                      mergeData="{!v.mergeData}" 
+                      recordId="{!v.recordId}"
+                      debug="{!v.debugOn}"
+                    />
+  </aura:if>
+
+</aura:component>
